@@ -39,7 +39,7 @@
           },
           {
             "group": "AI tools",
-            "pages": [
+            "page_": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
               "ai-tools/windsurf"
