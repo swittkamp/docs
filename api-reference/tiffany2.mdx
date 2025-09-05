@@ -1,6 +1,5 @@
 ---
-title: "Help - Mag Cards"
-description: "Description of your new file."
+title: "Help Topic - Mag Cards"
 ---
 
 ## Overview
@@ -89,12 +88,50 @@ To filter the current list of Mag Cards:
   Click `Reset` to clear all Filter fields.
 </Note>
 
-
 ## Assign Mag Card
 
-Mag Cards are assigned to either a driver or a unit. 
+Mag Cards are assigned to either a driver or a unit.
 
 To assign a Mag Card:
 
 1. Click on a record in the Mag Cards list.
 2. 
+
+## Change Mag Card Status
+
+To change the **Status** of a Mag Card to **Active**, you must also select a **Card Type** and make an **Association** selection.
+
+<Note>
+  - The Status of a Mag Card can be changed to Inactive from Active at any time.
+  - The Status of a Mag Card can be changed to Active from Inactive at any time.
+  - The Status of a Mag Card can be changed to Damaged from Active or Inactive at any time.
+  - The Status of a Mag Card can be changed to Active or Inactive from Damaged at any time.
+</Note>
+
+## Change Mag Card Type
+
+The **Card Type** determines the **Association** for the Mag Card. Changing the **Card Type** to Unit from Driver or from Driver to Unit will also require an **Association** change.
+
+## Change Mag Card Association
+
+The Association for Damaged or Inactive Mag Cards can be removed at any time. The Association for an Active Mag Card cannot be removed.
+
+<Note>
+  - Leaving a driver or unit on a Damaged or Inactive Mag Card will not prevent assigning the driver or unit to a different card.
+  - A driver or unit cannot be assigned to two different Active Mag Cards.
+</Note>
+
+## View Mag Card History
+
+Each entry in the Card History contains the **Expiration**, **Status**, **Card Type**, and **Driver/Unit #** as well as the date the card was **Last Updated** and the **User** who made the update.
+
+To see the Card History, click on a record in the Mag Card list.
+
+<img
+  src="/images/MagCardCardHistory.png"
+  alt="Mag Card Card History Pn"
+  title="Mag Card Card History Pn"
+  style={{ width:"82%" }}
+/>
+
+## Delete Mag Card
