@@ -1,5 +1,5 @@
 ---
-title: "Help Document - Mag Cards"
+title: "Help - Mag Cards"
 description: "Description of your new file."
 ---
 
@@ -24,14 +24,6 @@ By default, 15 records are displayed. This value may be changed in increments of
 To add a new Mag Card:
 
 1. Click the `Add Card` button.
-
-   <img
-     src="/images/AddCardButton.png"
-     alt="Add Card Button Pn"
-     title="Add Card Button Pn"
-     className="mr-auto"
-     style={{ width:"65%" }}
-   />
 2. The Add New Card dialog box displayd with the **Card #** field auto-filled and cannot be edited.
 
    <img
@@ -39,7 +31,7 @@ To add a new Mag Card:
      alt="Add New Card Pn"
      title="Add New Card Pn"
      className="mr-auto"
-     style={{ width:"65%" }}
+     style={{ width:"50%" }}
    />
 3. Click the `Save` button.
 
@@ -48,7 +40,7 @@ To add a new Mag Card:
      alt="New Mag Card Created Pn"
      title="New Mag Card Created Pn"
      className="mr-auto"
-     style={{ width:"65%" }}
+     style={{ width:"50%" }}
    />
 
 ### Print
@@ -56,14 +48,6 @@ To add a new Mag Card:
 To print the current list of Mag Cards:
 
 1. Click the `Print` button.
-
-   <img
-     src="/images/MagCardPrintButton.png"
-     alt="Mag Card Print Button Pn"
-     title="Mag Card Print Button Pn"
-     className="mr-auto"
-     style={{ width:"65%" }}
-   />
 2. The Print dialog box displays to select details for the print request.
 
 ### Export
@@ -71,13 +55,35 @@ To print the current list of Mag Cards:
 To export the current list of Mag Cards to a CSV file:
 
 1. Click the `Export` button.
-
-<img
-  src="/images/MagCardExportButton.png"
-  alt="Mag Card Export Button Pn"
-  title="Mag Card Export Button Pn"
-  className="mr-auto"
-  style={{ width:"65%" }}
-/>
-
 2. The file is downloaded.
+
+### Filter
+
+To filter the current list of Mag Cards:
+
+1. Click the `Filter` button.
+2. The Mag Cards Filter pane displays allowing for criteria to be entered or selected in one or more fields.
+
+   <img
+     src="/images/MagCardFilterPane.png"
+     alt="Mag Card Filter Pane Pn"
+     className="mr-auto"
+     style={{ width:"35%" }}
+   />
+
+| **FILTER FIELD**    | DESCRIPTION                                                                                         |
+  | ------------------- | --------------------------------------------------------------------------------------------------- |
+  | **Card #**          | Last section of the Mag Card number. Leave blank or enter 1 or more digits.                         |
+  | **Expiration Date** | Date on which the Mag Card expires. Click the Calendar icon to select the date.                     |
+  | **Status**          | Defaults to **All**. Use the arrow to select **Active**, **Inactive**, **Damaged**, or **Deleted**. |
+  | **Card Type**       | Defaults to **All**. Use the arrow to select **Unit** or **Driver**.                                |
+  | **Driver/Unit #**   | Leave blank to search for all drivers and units. Or enter a specific driver or unit code.           |
+3. Click the `Apply` button to process the filter request.
+
+<Note>
+  Use the `X` in the upper right-hand corner or the `Cancel` button to close the Filter pane.
+</Note>
+
+<Note>
+  Click `Reset` to clear all Filter fields.
+</Note>
