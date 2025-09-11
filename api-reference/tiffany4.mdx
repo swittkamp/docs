@@ -1,5 +1,6 @@
 ---
 title: "Automating Password Reset Using the QuikQ API"
+mode: "wide"
 ---
 
 When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT token response includes a property called uX. The uX value is the Unix(Epoch) time (in seconds) identifying when the current password for the authenticated account will expire. The JWT token must be decoded to show the uX property.
