@@ -3,7 +3,7 @@ title: "Automate Password Reset Using the QuikQ API"
 mode: "wide"
 ---
 
-When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT token response includes a property called uX. This value represents the **account's expiration time in Unix timestamp format**.
+When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT token response includes a property called uX. The uX value is the Unix Epoch datetime (in seconds) identifying when the current password for the authenticated account will expire.
 
 <Note>
   By monitoring this uX value, clients can proactively trigger a password reset before the account expires, **without waiting for manual intervention**.
@@ -12,14 +12,41 @@ When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT toke
 ## How It Works
 
 1. **Authenticate Using** `/v1/auth`
+   - A successful authentication returns the following response containing a JWT token:
 
-   A successful login returns a JWT token with a uX property:
+   ```json
+   	{
+   		"status": "success",
+   		"message": "Authentication success",
+   		"data": {
+   	    	"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzNzU1N..."
+   		}
+   	}
+   ```
 
-   The uX value is the Unix datetime (in seconds) indicating when the current password will expire.
-2. **Monitor Password Expiry**
+   <Note>
+     The JWT token value is unique to each successful authentication response.
+   </Note>
 
-   In your client or automation code, regularly check the current time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
-3. **Trigger a Password Reset Automatically**
+2. **Monitor Password Expiration**
+
+      - In your client or automation code, regularly check the current time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
+
+      - Using the website https://www.jwt.io/, the JWT token can be decoded to show the uX property:
+
+   ```json
+   {
+   	{
+   	  "sub": "37555",
+   	  "acode": "##0001",
+   	  "roles": "TSADMIN",
+   	  "version": "v2",
+   	  "uX": 1762864254,
+   	  "exp": 1755090054
+   	}
+   ```
+
+1. **Trigger a Password Reset Automatically**
 
    When ready, call the endpoint:
 
