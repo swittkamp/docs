@@ -1,0 +1,39 @@
+---
+title: "How to Change your QuikQ Password without Disrupting Services"
+mode: "wide"
+---
+
+To prevent authentication errors or service disruptions, it is essential to **stop all QuikQ-related services before changing your password and restart them after the change is complete**.
+
+## Step-by Step Instructions
+
+1. **Stop All QuikQ-Related Services**
+
+   Before proceeding with a password change, ensure that all services, applications, scriptions, or scheduled jobs that use your QuikQ credentials are stopped.
+
+   This helps prevent your old credentials from being used after the password is changed, which could lead to account lockouts or service errors.
+2. **Change Your Password**
+
+   Once all related services have been stopped:
+   - Log in to the appropriate system where password changes are managed.
+   - Update your password as instructed.
+   - Make note of the new password for updating configuration files, services, or scripts that required it.
+3. **Update Credentials and Restart Services**
+
+   After the password has been changed:
+   - Update any stored credentials in your services, applications, or job configurations.
+   - Restart all previously stopped QuikQ-related services.
+
+   This ensures your services continue to run smoothly with your new credentials.
+
+## Important Notes
+
+<Note>
+  Failure to stop services before changing your password can result in repeated authentication failures or account lockouts.
+</Note>
+
+<Note>
+  Be sure to update all instances where your QuikQ credentials are stored before restarting services.
+</Note>
+
+If you need assistances identifying affected services or updating stored credentials, please contact your system administrator or QuikQ Support.
