@@ -44,6 +44,7 @@ By monitoring this uX value, clients can proactively trigger a password reset be
    - To convert the uX value from Unix(Epoch) time to a human-readable date and time, use the https://www.epochconverter.io/ website. The uX value in the example above converts to Tuesday, Nov 11, 2025 06:30:54.000 AM Central Time.
 3. **Trigger a Password Reset Automatically**
 
+
    Before calling the endpoint `/v1/auth/resetPassword`, you **must stop all QuikQ-related services that depend on the current credentials**.
 
    When ready, call the end point `/v1/auth/resetPassword\`. This endpoint will issue a new password and return it in the response.
