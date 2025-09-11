@@ -5,9 +5,7 @@ mode: "wide"
 
 When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT token response includes a property called uX. The uX value is the Unix Epoch datetime (in seconds) identifying when the current password for the authenticated account will expire.
 
-<Note>
-  By monitoring this uX value, clients can proactively trigger a password reset before the account expires, **without waiting for manual intervention**.
-</Note>
+By monitoring this uX value, clients can proactively trigger a password reset before the account expires, **without waiting for manual intervention**.
 
 ## How It Works
 
@@ -27,12 +25,9 @@ When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT toke
    <Note>
      The JWT token value is unique to each successful authentication response.
    </Note>
-
 2. **Monitor Password Expiration**
-
-      - In your client or automation code, regularly check the current time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
-
-      - Using the website https://www.jwt.io/, the JWT token can be decoded to show the uX property:
+   - In your client or automation code, regularly check the current time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
+   - Using the website https://www.jwt.io/, the JWT token can be decoded to show the uX property:
 
    ```json
    {
@@ -45,8 +40,7 @@ When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT toke
    	  "exp": 1755090054
    	}
    ```
-
-1. **Trigger a Password Reset Automatically**
+3. **Trigger a Password Reset Automatically**
 
    When ready, call the endpoint:
 
