@@ -1,5 +1,40 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Automate Password Reset Using the QuikQ API"
+description: "Description of your new file."
 ---
 
+When using the `api.quikq.com/v1/auth` endpoint for authentication, the JWT token response includes a property called uX. This value represents the **account's expiration time in Unix timestamp format**.
+
+<Note>
+  By monitoring this uX value, clients can proactively trigger a password reset before the account expires, **without waiting for manual intervention**.
+</Note>
+
+## How It Works
+
+1. **Authenticate Using** `/v1/auth`
+
+   A successful login returns a JWT token with a uX property:
+
+   The uX value is the Unix datetime (in seconds) indicating when the current password will expire.
+2. **Monitor Password Expiry**
+
+   In your client or automation code, regularly check the current time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
+3. **Trigger a Password Reset Automatically**
+
+   When ready, call the endpoint:
+
+   This endpoint will issue a new password and return it in the response.
+
+<Note>
+  **Reminder: Stop and Restart Your Services**
+
+  Before triggering an automated password reset with `/v1/auth/resetPassword`, you **must stop all QuikQ-related services that depend on the current credentials**.
+</Note>
+
+<Note>
+  For complete guidance on the process to stop and restart services, please refer to the **QuikQ Auth API document**, which outlines the required steps to stop services prior to the password reset and restart them afterward to avoid authentication failures or service disruptions.
+</Note>
+
+4. **Once the new password is received:**
+   - Update your stored credentials.
+   - Restart all QuikQ-related services to resume normal operation.
