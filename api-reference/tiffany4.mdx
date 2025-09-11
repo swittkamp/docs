@@ -48,14 +48,11 @@ By monitoring this uX value, clients can proactively trigger a password reset be
 
    When ready, call the end point `/v1/auth/resetPassword\`. This endpoint will issue a new password and return it in the response.
 
-   Once the password has been reset:
-   - Update your stored credentials with the new password.
-   - Restart all QuikQ-related services to resume normal operations.
+   Once the password has been reset, restart all QuikQ-related services to resume normal operations.
 
    <Note>
      Before triggering an automated password reset with `/v1/auth/resetPassword`, you must stop all QuikQ-related services that depend on the current credentials to avoid authentication failures or service disruptions.
    </Note>
-
 
 ## Reminders: Stop and Restart Your Services
 
