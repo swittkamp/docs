@@ -11,6 +11,7 @@ By monitoring this uX value, clients can proactively trigger a password reset be
 
 1. **Authenticate Using** `/v1/auth`
 
+
    A successful authentication returns the following response containing a JWT token:
 
    ```json
@@ -27,6 +28,7 @@ By monitoring this uX value, clients can proactively trigger a password reset be
      The JWT token value is unique to each successful authentication response.
    </Note>
 2. **Monitor Password Expiration**
+
 
    In your client or automation code, regularly check the current date and time against the uX value. When nearing expiration (e.g., within 24 hours), initiate a reset.
    - To show the uX value, decode the JWT token using the https://www.jwt.io/ website. Here is an example of the decoded properties:
